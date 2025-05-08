@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电动自行车仪表盘</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #111;
+            color: #eee;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .dashboard-container {
+            background-color: #222;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            width: 90%;
+            /* 稍微增加整体宽度 */
+            max-width: 900px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .left-panel {
+            flex: 1.2;
+            /* 增加左侧面板的 flex 比例，使其更宽 */
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            /* 保持左对齐 */
+        }
+
+        .top-info {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+            margin-bottom: 15px;
+            /* 稍微减小与速度区域的间距 */
+        }
+
+        .gps-signal {
+            display: flex;
+            align-items: center;
+            font-size: 1em;
+            /* 稍微增大字体 */
+        }
+
+        .gps-icon {
+            width: 18px;
+            height: 18px;
+            border: 1px solid #eee;
+            border-radius: 3px;
+            margin-right: 8px;
+        }
+
+        .battery {
+            display: flex;
+            align-items: center;
+            font-size: 1em;
+            /* 稍微增大字体 */
+        }
+
+        .battery-icon {
+            width: 30px;
+            height: 15px;
+            border: 1px solid #eee;
+            border-radius: 2px;
+            margin-left: 10px;
+            position: relative;
+        }
+
+        .battery-level {
+            background-color: orange;
+            /* 示例颜色 */
+            height: 100%;
+            border-radius: 1px;
+            width: 60%;
+        }
+
+        .battery-percentage {
+            margin-left: 8px;
+        }
+
+        .speed {
+            font-size: 3.5em;
+            /* 稍微增大速度字体 */
+            font-weight: bold;
+            margin-bottom: 15px;
+            /* 稍微减小与底部区域的间距 */
+            align-self: center;
+            width: 100%;
+            text-align: center;
+        }
+
+        .bottom-info {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .tire-pressure {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            /* 稍微减小间距 */
+        }
+
+        .tire {
+            display: flex;
+            align-items: center;
+            font-size: 1em;
+            /* 稍微增大字体 */
+        }
+
+        .tire-icon {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            border: 1px solid #eee;
+            margin-right: 6px;
+            font-size: 0.8em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .time-compass {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1em;
+            /* 稍微增大字体 */
+        }
+
+        .map-panel {
+            flex: 1.8;
+            /* 相应调整右侧面板的 flex 比例 */
+            background-color: #333;
+            border-left: 1px solid #444;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 300px;
+        }
+
+        .map-placeholder {
+            color: #888;
+            font-size: 1.2em;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <div class="left-panel">
+            <div class="top-info">
+                <div class="gps-signal">
+                    <div class="gps-icon" style="background-color: #4CAF50;"></div> GPS 信号
+                </div>
+                <div class="battery">
+                    <div class="battery-icon">
+                        <div class="battery-level" style="width: 70%; background-color: #FFC107;"></div>
+                    </div>
+                    <div class="battery-percentage">70%</div>
+                </div>
+            </div>
+            <div class="speed">48 km/h</div>
+            <div class="bottom-info">
+                <div class="tire-pressure">
+                    <div class="tire">
+                        <div class="tire-icon">F</div> 前: 2.0 bar
+                    </div>
+                    <div class="tire">
+                        <div class="tire-icon">R</div> 后: 2.2 bar
+                    </div>
+                </div>
+                <div class="time-compass">
+                    <div>11:05</div>
+                    <div>东北</div>
+                </div>
+            </div>
+        </div>
+        <div class="map-panel">
+            <div class="map-placeholder">地图显示区域 (待集成)</div>
+        </div>
+    </div>
+</body>
+
+</html>
